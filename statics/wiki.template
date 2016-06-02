@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$ class="no-js">
+    <head>
+        <title>Panbook, A Document Generator Based on Pandoc Templates.</title>
+        <meta name="author" content="Panbook" />
+        <meta name="author" content="district10">
+        <meta name="keywords" content="panbook, document generator, pandoc templates">
+        <meta charset="utf-8">
+        <meta name="generator" content="pandoc">
+        <style type="text/css">
+            code{ white-space: pre; }
+            q   { quotes: "“" "”" "‘" "’"; }
+            .markdown-body {
+                box-sizing: border-box;
+                min-width: 200px;
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 45px;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="/css/components-right.css" />
+        <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/css/github-markdown.css" />
+        <link rel="stylesheet" type="text/css" href="/css/highlight.css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+        <![endif]-->
+        <script src="/js/modernizr.custom.js"></script>
+    </head>
+    <body>
+        <div id="st-container" class="st-container">
+            <nav class="st-menu st-effect-12" id="menu-12">
+                <h2 id="panbookhome"><i class="icon-heart"></i> Panbook</h2>
+                <ul>
+                    <li><a href="/fragments/pbindex.html">Index</a></li>
+$for(pb-index)$
+                    <li><a href="$pb-index.url$">$pb-index.title$</a></li>
+$for(pb-index.pb-index)$
+                    <li><a href="$pb-index.pb-index.url$">$pb-index.pb-index.title$</a></li>
+$endfor$
+$endfor$
+                </ul>
+            </nav>
+            <div class="st-pusher">
+                <div class="st-content">
+                    <div class="st-content-inner">
+
+                        <div class="codrops-top clearfix">
+                            <span class="st-trigger-effects">
+                                <a data-effect="st-effect-12" href="#"><i class="icon-asterisk icon-spin"></i></a></span>
+                            <span class="right">
+                                <a href="https://github.com/district10/panbook"><i class="icon-github"></i> Fork me on GitHub</a></span>
+                        </div>
+
+                        <div id="tabNav">
+                            <ul>
+                                <li><a href="#tab1">GitHub Style</a></li>
+                                <li><a href="#tab2">Panbook Style</a></li>
+                            </ul>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div id="tabs">
+                            <div id="tab1">
+                                <div id="panbookbody-github" class="markdown-body">
+                                $body$
+                                </div>
+                            </div>
+                            <div id="tab2">
+                                <div id="panbookbody-native">
+                                $body$
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="diagram">A->B: Message</div>
+                        <div id="diagram">Diagram will be placed here</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.idTabs.min.js"></script>
+
+        <script src="/js/underscore-min.js"></script>
+        <script src="/js/raphael.min.js"></script>
+        <script src="/js/sequence-diagram-min.js"></script>
+        <script src="/js/flowchart.min.js"></script>
+
+        <!--
+        <script src="/js/animated-grid-layout.js"></script>
+        -->
+
+        <script src="/js/classie.js"></script>
+        <script src="/js/sidebarEffects.js"></script>
+        <script src="/js/panbook.js"></script>
+    </body>
+</html>

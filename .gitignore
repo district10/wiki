@@ -1,0 +1,6 @@
+build/*
+publish/*
+tmp/*
+*~
+*#
+conf.json

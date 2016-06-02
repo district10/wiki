@@ -1,0 +1,4 @@
+# Emacs
+
+is powerful.
+
