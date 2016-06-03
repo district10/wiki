@@ -4,6 +4,8 @@ Wiki is your system of knowledge.
 
 I thought a long time, and finally, decided to take notes away from my blog repo.
 
+<http://7xv0ec.com1.z0.glb.clouddn.com>
+
 ## buckets
 
 -   `meta`, meta buckets
