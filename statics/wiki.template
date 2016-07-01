@@ -28,6 +28,8 @@
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
         <![endif]-->
         <script src="/js/modernizr.custom.js"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+        <!--<script src="/js/Mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>-->
     </head>
     <body>
         <div id="st-container" class="st-container">
@@ -35,6 +37,7 @@
                 <h2 id="panbookhome"><i class="icon-heart"></i> Panbook</h2>
                 <ul>
                     <li><a href="/fragments/index.html">Index</a></li>
+                    <li><a href="/fragments/src/meta/crude.html">Crude</a></li>
 $for(pb-index)$
                     <li><a href="$pb-index.url$">$pb-index.title$</a></li>
 $for(pb-index.pb-index)$
@@ -51,7 +54,7 @@ $endfor$
                             <span class="st-trigger-effects">
                                 <a data-effect="st-effect-12" href="#"><i class="icon-asterisk icon-spin"></i></a></span>
                             <span class="right">
-                                <a href="https://github.com/district10/panbook"><i class="icon-github"></i> Fork me on GitHub</a></span>
+                                <a href="https://github.com/district10/wiki"><i class="icon-github"></i> Fork me on GitHub</a></span>
                         </div>
 
                         <div id="tabNav">

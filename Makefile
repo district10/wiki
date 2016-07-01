@@ -17,15 +17,17 @@ DSTMD:=$(addprefix $(PUBDIR)/, $(SRCMD))
 HTMLS:=$(DSTMD:%.md=%.html)
 FRAGS:=$(addprefix $(FRAGDIR)/, $(SRCMD))
 FRAGS:=$(FRAGS:%.md=%.md.html) $(FRAGS:%.md=%.html)
-STATICS:=$(wildcard $(STATICSDIR)/*.* $(STATICSDIR)/*/*.* $(STATICSDIR)/*/*/*.* $(STATICSDIR)/*/*/*/*.*)
+STATICS:=$(wildcard $(STATICSDIR)/*/*.* $(STATICSDIR)/*/*/*.* $(STATICSDIR)/*/*/*/*.* $(STATICSDIR)/*/*/*/*/*.*)
 PUBSTATICS:=$(STATICS:$(STATICSDIR)/%=$(PUBDIR)/%)
 
-PANDOC_OPTIONS:=--ascii -f markdown+abbreviations
+PANDOC_OPTIONS:=--ascii --mathjax -f markdown+abbreviations
 ifeq (,$(DUMB))
 	PANDOC_OPTIONS:=$(PANDOC_OPTIONS)+east_asian_line_breaks+emoji
 endif
 
 all: $(DSTMD) $(HTMLS) $(PUBSTATICS) $(FRAGS)
+gh:
+	git add -A; git commit -m "done"; git push
 dumb:
 	make -C .
 clean:
@@ -62,3 +64,11 @@ index:
 	sh $(INDEX_SH) > $(PBINDEX_YAML) && \
 	echo "## Wiki Index" | \
 	pandoc $(PANDOC_OPTIONS) --template $(STATICSDIR)/index.template $(PBINDEX_YAML) > $(PBINDEX_PAGE)
+
+EDITS = \
+		src/meta/crude.md \
+		src/meta/plans.md \
+		src/github/index.md \
+
+it:
+	$(EDITOR) $(EDITS) 2>/dev/null &

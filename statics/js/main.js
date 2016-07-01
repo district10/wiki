@@ -19,6 +19,7 @@ function panbookinit() {
             return false;
         }
     });
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 }
 
 $(function(){
